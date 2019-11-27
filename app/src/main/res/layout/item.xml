@@ -10,20 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
-    <TextView
-        android:id="@+id/qianddu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tiaomu"
-        android:layout_alignLeft="@+id/tiaomu" />
+
 
     <TextView
         android:id="@+id/lock"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_toRightOf="@+id/kkk"
+        android:layout_toRightOf="@+id/lll"
         android:gravity="center"
         />
+
+
+
+
 
     <ImageView
         android:id="@+id/ko"
@@ -41,26 +40,22 @@
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/ko"
         android:text="Recycler" />
-
+    <TextView
+        android:id="@+id/qianddu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/text2"/>
     <Button
         android:id="@+id/lll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/ko"
-        android:layout_toRightOf="@+id/text2"
+        android:layout_toRightOf="@+id/qianddu"
         android:text="显示位置"
 
         />
 
-    <Button
-        android:id="@+id/kkk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/ko"
-        android:layout_toRightOf="@+id/lll"
-        android:text="QQ"
-
-        />
 
 
 </RelativeLayout>

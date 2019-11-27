@@ -35,7 +35,7 @@ public class testAdapter extends RecyclerView.Adapter<testAdapter.VH> {
             qingdu = itemView.findViewById(R.id.qianddu);
             lock = itemView.findViewById(R.id.lock);
             button_position = itemView.findViewById(R.id.lll);
-            button_qq = itemView.findViewById(R.id.kkk);
+
         }
     }
 
@@ -52,13 +52,6 @@ public class testAdapter extends RecyclerView.Adapter<testAdapter.VH> {
         holder.textView.setText(mDatas.get(position).getname());
         holder.qingdu.setText(mDatas.get(position).getRiss()+"");
         holder.lock.setText(mDatas.get(position).getLockkk());
-        holder.button_qq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                msetQQClickListerer.onItemClick(v, position);
-                //Toast.makeText(mContext,"qq"+position,Toast.LENGTH_LONG).show();
-            }
-        });
 
         holder.button_position.setOnClickListener(new View.OnClickListener() {
             @Override

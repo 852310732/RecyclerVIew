@@ -35,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
     WifiManager wifiManager;
 
 
-
     List<String> mPermissionList = new ArrayList<>();
     private final int mRequestCode = 1;//权限请求码
     String[] permissions = new String[]{
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_WIFI_STATE,
-        Manifest.permission.CHANGE_WIFI_MULTICAST_STATE,
-        Manifest.permission.CHANGE_WIFI_STATE};
+            Manifest.permission.CHANGE_WIFI_MULTICAST_STATE,
+            Manifest.permission.CHANGE_WIFI_STATE};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                wifilist.clear();
                 MyWifiManager.startScanWifi(wifiManager);
                 names = MyWifiManager.getWifiList(wifiManager);
                 for (int i = 0; names.size() > i; i++) {
@@ -75,11 +76,13 @@ public class MainActivity extends AppCompatActivity {
                     wiFiBean.setLockkk(MyWifiManager.getEncrypt(wifiManager, names.get(i)));
                     wifilist.add(wiFiBean);
                     testAdapterr.notifyDataSetChanged();
+
                 }
             }
         });
     }
-    private void inta(){
+
+    private void inta() {
         wifilist = new ArrayList<>();
         names = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -92,13 +95,7 @@ public class MainActivity extends AppCompatActivity {
         testAdapterr.setmOnItemClickListerer(new testAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(MainActivity.this, "位置" + wifilist.get(position), Toast.LENGTH_LONG).show();
-            }
-        });
-        testAdapterr.setmQQClickListerer(new testAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Toast.makeText(MainActivity.this, "QQ" + wifilist.get(position), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "位置" + names.get(position).frequency, Toast.LENGTH_LONG).show();
             }
         });
     }
